@@ -124,3 +124,51 @@ This setup allowed the Windows 10 machine to be a part of the domain controlled 
 
 <img width="1792" alt="Screen Shot 2023-10-20 at 1 44 09 PM" src="https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/de37f4fd-02f4-4392-98cd-9b41f8d44a51">
 
+
+## Setting Up Network Adapters Within Windows Server
+
+
+- 1. **Boot Your Virtual Machine:**
+
+Start your Windows Server 2019 virtual machine.
+- 2.  **Log In:**
+
+Log in to your Windows Server 2019 virtual machine with administrative privileges.
+- 3.  **Configure IP Addresses:**
+
+Open the "Network Connections" window.
+You should see two network adapters listed: one for NAT and one for the internal network.
+- 4.  **Configure IP Addresses for NAT Adapter:**
+
+Right-click on the NAT network adapter and select "Properties."
+Select "Internet Protocol Version 4 (TCP/IPv4)" and click "Properties."
+Choose "Obtain an IP address automatically" or manually set the IP settings based on your requirements.
+Click "OK" to save the settings.
+- 5.  **Configure IP Addresses for Internal Adapter:**
+
+Right-click on the internal network adapter and select "Properties."
+Select "Internet Protocol Version 4 (TCP/IPv4)" and click "Properties."
+Choose "Use the following IP address" and specify the IP address and subnet mask for the internal network adapter. There's no need to set a gateway because it's an internal network.
+Click "OK" to save the settings.
+
+![image](https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/7c101ed4-76be-4272-b9df-e917fba3f79f)
+
+
+## in my case
+
+
+ **IP address:** 172.16.0.1 (you can set your own address as long as it doesn't overlap with other addresses) <br>
+ **Subnet mask:** 255.255.255.0 (which is a /24 subnet holding up to 254 addresses available to be assigned to hosts) <br>
+ **Default Gateway:** empty <br>
+ **Preferred DNS:** 172.16.0.1 <br>
+ **Alternate DNS:** 127.0.0.1 <br>
+<br>
+- 6.  **Verify Connectivity:**
+
+Open a Command Prompt and use commands like ipconfig, ping, and tracert to verify the configuration and connectivity of both network adapters.
+- 7.  **Test Network Functionality:**
+
+Test the functionality of both network adapters by accessing resources on the NAT network (external) and the internal network as needed.
+
+
+
