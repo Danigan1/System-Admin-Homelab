@@ -31,9 +31,12 @@ This project signifies my proactive approach to learning. It highlights my dedic
 
 I invite you to explore my journey further. It is a testament to my commitment to learning, adaptability in different Windows environments, and my pursuit of system admin proficiency within a Windows ecosystem.
 
-As a hiring manager, you'll find that this project signifies a dedication to practical skill development and an innate drive to understand the nuances of system administration, particularly within a Windows environment. It is a testament to my willingness to invest time and effort into mastering essential aspects of the field.
 
 
+# Prerequisites
+- [Vmware](https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html) Workstation or [VirtualBox](https://www.virtualbox.org/wiki/Downloads) (This project utilizes Virtual Box)
+- Windows Server [2019](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019) ISO image
+- Windows [10](https://www.microsoft.com/en-us/software-download/windows10ISO) ISO image
 
 
 
