@@ -89,24 +89,16 @@ Once you've completed these steps, you should have both Windows Server 2019 and 
 
 # Network Configuration (Virtual Box)
 
-- The Windows Server 2019 machine plays the postion of a **domain controller**.
-- The Windows 10 Machine plays the position of a **client**
+- The Windows Server 2019 machine plays the role of **domain controller**.
+- The Windows 10 machine plays the role of **client**
 
 ## On the Windows Server 2019 machine:
  
-I implemented two network interface cards (NICs) 
+I provisioned two network interface cards (NICs) 
 
-The first NIC, connected to **"NAT,"** provided internet access. It allowed the server to communicate with the external internet.
+The first NIC, set to **"NAT,"** provided internet access. It allowed the server to communicate with the external internet.
 
 The second NIC, set to **"Internal Network,"** established a private network isolated from the external internet. This network was intended for internal communication within the lab environment.
-
-After setting up the network adapters, I powered on the Windows Server 2019 virtual machine and configured the NICs as follows:
-
-The NIC connected to **"NAT"** was set to obtain its IP address automatically, typically through DHCP, allowing the server to access the internet and external resources.
-
-The second NIC, which was on the internal network, was configured with a static IP address. This NIC was essential for internal network communication.
-
-Subsequently, I installed and configured the Active Directory Domain Services role on the Windows Server 2019 machine, effectively transforming it into a domain controller for the lab network.
 
 <img width="1792" alt="Screen Shot 2023-10-20 at 1 41 41 PM" src="https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/57623fd3-aaa8-4379-a3bf-8050ee6acdfc">
 
@@ -114,61 +106,38 @@ Subsequently, I installed and configured the Active Directory Domain Services ro
 
 ## On the Windows 10 machine in the lab:
 
-It had a single NIC configured as **"Internal Network,"** allowing it to connect to the private, internal network established by the domain controller.
+It had a single NIC configured as **"Internal Network,"** allowing it to connect to the private, internal network established by the domain controller. 
 
-The NIC on the Windows 10 machine was configured to obtain its IP address automatically through DHCP, with the Windows Server 2019 domain controller serving as the DHCP server.
+Ultimately, the Windows 10 machine was going to be configured to obtain its IP address automatically through DHCP, with the Windows Server 2019 domain controller serving as the DHCP server.
 
-The Windows 10 machine was also configured to use the Windows Server 2019 machine as its gateway for network communication within the lab environment.
+Additionally, the Windows server was going to be a default gateway for reaching the outer internet.
 
-This setup allowed the Windows 10 machine to be a part of the domain controlled by the Windows Server 2019 domain controller while using it as both the DHCP server and gateway for internal network communication.
 
 <img width="1792" alt="Screen Shot 2023-10-20 at 1 44 09 PM" src="https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/de37f4fd-02f4-4392-98cd-9b41f8d44a51">
 
 
-# Steps for Network Configuration (within the virtual Machine)
+# Network Configuration (within the virtual Machine)
+
+Within the Windows Server 2019 machine, I had to configure the two network adapters within the "Network Connections" section to create a more versatile network setup.
+
+For the NAT network adapter. I selected the option to "Obtain an IP address automatically." This meant that my server would dynamically receive an IP address from my home router. This dynamic assignment was ideal for connecting to the internet and ensuring the server received the necessary IP configuration from my home network.
+
+Now, for the second network adapter, which was set as "internal," I had to statically configure the IP settings. Here's what I applied: <br>
+
+**IP Address:** 172.16.0.1 <br>
+**Subnet Mask:** 255.255.255.0 <br>
+**Default Gateway:** I left this field empty since it was an internal network.<br>
+**Preferred DNS:** 172.16.0.1<br>
+**Alternate DNS:** 127.0.0.1<br>
+
+These settings allowed me to establish an isolated internal network. The IP address of 172.16.0.1 served as the gateway for this network, and I used the same address as the preferred DNS server. Since this network was for internal use only, there was no need for a default gateway to connect to external networks. The alternate DNS address of 127.0.0.1 pointed back to the local machine, ensuring efficient DNS resolution for the internal network.
+
+By configuring these network adapters in the "Network Connections" section of Windows Server 2019, I created a network environment that provided both internet access and an isolated internal network to meet my specific requirements in my home lab.
+
+Subsequently, I installed and configured the Active Directory Domain Services role on the Windows Server 2019 machine, effectively transforming it into a domain controller for the lab network.
 
 
-- 1. **Boot Your Virtual Machine:**
 
-Start your Windows Server 2019 virtual machine.
-- 2.  **Log In:**
-
-Log in to your Windows Server 2019 virtual machine with administrative privileges.
-- 3.  **Configure IP Addresses:**
-
-Open the "Network Connections" window.
-You should see two network adapters listed: one for NAT and one for the internal network.
-- 4.  **Configure IP Addresses for NAT Adapter:**
-
-Right-click on the NAT network adapter and select "Properties."
-Select "Internet Protocol Version 4 (TCP/IPv4)" and click "Properties."
-Choose "Obtain an IP address automatically" or manually set the IP settings based on your requirements.
-Click "OK" to save the settings.
-- 5.  **Configure IP Addresses for Internal Adapter:**
-
-Right-click on the internal network adapter and select "Properties."
-Select "Internet Protocol Version 4 (TCP/IPv4)" and click "Properties."
-Choose "Use the following IP address" and specify the IP address and subnet mask for the internal network adapter. There's no need to set a gateway because it's an internal network.
-Click "OK" to save the settings.
-
-![image](https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/7c101ed4-76be-4272-b9df-e917fba3f79f)
-
-
-## in my case
-
-
- **IP address:** 172.16.0.1 (you can set your own address as long as it doesn't overlap with other addresses) <br>
- **Subnet mask:** 255.255.255.0 (which is a /24 subnet holding up to 254 addresses available to be assigned to hosts) <br>
- **Default Gateway:** empty <br>
- **Preferred DNS:** 172.16.0.1 <br>
- **Alternate DNS:** 127.0.0.1 <br>
-<br>
-- 6.  **Verify Connectivity:**
-
-Open a Command Prompt and use commands like ipconfig, ping, and tracert to verify the configuration and connectivity of both network adapters.
-- 7.  **Test Network Functionality:**
-
-Test the functionality of both network adapters by accessing resources on the NAT network (external) and the internal network as needed.
 
 
 
