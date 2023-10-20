@@ -33,7 +33,7 @@ I invite you to explore my journey further. It is a testament to my commitment t
 
 
 
-# Prerequisites
+# Prerequisites (things that need to be downloaded)
 - [VirtualBox](https://www.virtualbox.org/wiki/Downloads) 
 
 **Download the version of VirtualBox that matches your host operating system (e.g., Windows, macOS, or Linux).*
@@ -85,4 +85,42 @@ c. Follow the on-screen instructions to install Windows 10 on the second virtual
 
 Once you've completed these steps, you should have both Windows Server 2019 and Windows 10 running as virtual machines in VirtualBox on your computer. You can start, stop, and manage these virtual machines within VirtualBox as needed.
 
+
+
+# Network configuration
+
+- The Windows Server 2019 machine was set up to act as a **domain controller**.
+- The Windows 10 Machine was set up to be a **client**
+
+## On the Windows Server 2019 machine:
+ 
+Within the Virtual Box settings, I implemented two network interface cards (NICs) 
+
+The first NIC, connected to **"NAT,"** provided internet access. It allowed the server to communicate with the external internet.
+
+The second NIC, set to **"Internal Network,"** established a private network isolated from the external internet. This network was intended for internal communication within the lab environment.
+
+After setting up the network adapters, I powered on the Windows Server 2019 virtual machine and configured the NICs as follows:
+
+The NIC connected to **"NAT"** was set to obtain its IP address automatically, typically through DHCP, allowing the server to access the internet and external resources.
+
+The second NIC, which was on the internal network, was configured with a static IP address. This NIC was essential for internal network communication.
+
+Subsequently, I installed and configured the Active Directory Domain Services role on the Windows Server 2019 machine, effectively transforming it into a domain controller for the lab network.
+
+<img width="1792" alt="Screen Shot 2023-10-20 at 1 41 41 PM" src="https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/57623fd3-aaa8-4379-a3bf-8050ee6acdfc">
+
+<img width="1792" alt="Screen Shot 2023-10-20 at 1 41 52 PM" src="https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/41ba9ab6-1a78-434f-8366-3396d53bee85">
+
+## On the Windows 10 machine in the lab:
+
+It had a single NIC configured as **"Internal Network,"** allowing it to connect to the private, internal network established by the domain controller.
+
+The NIC on the Windows 10 machine was configured to obtain its IP address automatically through DHCP, with the Windows Server 2019 domain controller serving as the DHCP server.
+
+The Windows 10 machine was also configured to use the Windows Server 2019 machine as its gateway for network communication within the lab environment.
+
+This setup allowed the Windows 10 machine to be a part of the domain controlled by the Windows Server 2019 domain controller while using it as both the DHCP server and gateway for internal network communication.
+
+<img width="1792" alt="Screen Shot 2023-10-20 at 1 44 09 PM" src="https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/de37f4fd-02f4-4392-98cd-9b41f8d44a51">
 
