@@ -87,14 +87,14 @@ Once you've completed these steps, you should have both Windows Server 2019 and 
 
 
 
-# Network configuration
+# Network Configuration (Virtual Box)
 
-- The Windows Server 2019 machine was set up to act as a **domain controller**.
-- The Windows 10 Machine was set up to be a **client**
+- The Windows Server 2019 machine plays the postion of a **domain controller**.
+- The Windows 10 Machine plays the position of a **client**
 
 ## On the Windows Server 2019 machine:
  
-Within the Virtual Box settings, I implemented two network interface cards (NICs) 
+I implemented two network interface cards (NICs) 
 
 The first NIC, connected to **"NAT,"** provided internet access. It allowed the server to communicate with the external internet.
 
@@ -125,7 +125,7 @@ This setup allowed the Windows 10 machine to be a part of the domain controlled 
 <img width="1792" alt="Screen Shot 2023-10-20 at 1 44 09 PM" src="https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/de37f4fd-02f4-4392-98cd-9b41f8d44a51">
 
 
-## Setting Up Network Adapters Within Windows Server
+# Steps for Network Configuration (within the virtual Machine)
 
 
 - 1. **Boot Your Virtual Machine:**
