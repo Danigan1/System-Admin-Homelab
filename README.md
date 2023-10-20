@@ -21,7 +21,8 @@ Within this lab, I've carefully structured a real-world-like environment to expl
 
 Complementing the server is a Windows 10 machine, seamlessly joined to the domain. This configuration provides a holistic understanding of system admin responsibilities, network management, and user account management. It's a practical microcosm of enterprise environments, with the Windows Server 2019 acting as the backbone and the Windows 10 machine as the endpoint.
 
-<img width="1403" alt="Screen Shot 2023-10-20 at 11 45 44 AM" src="https://github.com/Danigan1/Azure-Cloud-Detection-Lab/assets/107498392/a833fe59-3bf7-4786-ac8e-e76ef3793237">
+<img width="1331" alt="Screen Shot 2023-10-20 at 11 51 26 AM" src="https://github.com/Danigan1/Azure-Cloud-Detection-Lab/assets/107498392/3d07f5ad-c417-4875-9af1-a2681c801098">
+
 
 ## The Windows Perspective
 You may wonder why I chose to focus on Windows. Windows systems play a prominent role in many organizations. For system administrators, proficiency in Windows-based environments is a valuable skill set. By concentrating my efforts on Windows, I'm positioning myself to excel in a wide range of IT roles and environments.
