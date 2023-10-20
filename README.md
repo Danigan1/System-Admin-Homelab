@@ -72,6 +72,8 @@ g. Follow the on-screen instructions to install Windows Server 2019 on your virt
 
 **Note that if you choose to install any version that doesn't have "Desktop Experience", you will not be given a GUI.*
 
+![windwos gif](https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/b723053a-2f77-427a-8df7-162d82afbed3)
+
 
 **Install Windows 10 in VirtualBox:**
 
