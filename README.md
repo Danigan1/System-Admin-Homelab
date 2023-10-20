@@ -1,30 +1,42 @@
-# Emulating a Security Operations Center (SOC) with an Azure Honeynet: Live Attacker Traffic!
 
-![68747470733a2f2f692e696d6775722e636f6d2f5a5778653033652e6a7067](https://user-images.githubusercontent.com/109401839/236074219-a957c5f2-21e9-4501-9d9d-ed879e01558f.jpg)
+# Unlocking Windows Mastery: Crafting a Home Lab for Advanced System Admin Skills
 
-## Introduction
+## Introduction:
 
-In this project, I create a compact honeynet model in Microsoft Azure, drawing in real-world attacker traffic from global sources. The overarching aim is to showcase optimal security practices, effective incident response strategies, and the effects of hardening your environment. This objective is pursued by deliberately setting up virtual machines, intentionally lacking safeguards against public internet access, to entice potential attackers into our controlled environment. After aggregating various log sources into the Log Analytics Workspace, the deployment of Microsoft Sentinel becomes instrumental. This tool generates attack visualizations (attack maps), triggers alerts, and compiles incident reports. 
-Furthermore, the project includes a comparative analysis of metrics, both prior to and post the application of security strengthening measures. These insights are drawn from the incidents observed during the 24-hour monitoring period, offering a comprehensive view of the improvements achieved.
+Welcome to my GitHub project where I'm embarking on a journey to build a home lab on a Windows platform to hone my skills in system administration. System administration is the backbone of any IT infrastructure, and a well-crafted lab environment is the perfect playground for learning and mastering these critical responsibilities.
+
+## Why a Home Lab?
+
+As an aspiring system administrator, a home lab serves as an invaluable tool for various reasons:
+
+Hands-On Learning: It provides a safe and controlled space to get hands-on experience with real-world system admin tasks without the fear of causing disruptions in a production environment.
+
+Skill Development: The lab enables me to experiment with different operating systems, services, and configurations, helping me develop and fine-tune my skills.
+
+Testing and Troubleshooting: I can replicate and troubleshoot common issues, security vulnerabilities, and network configurations, preparing me for the challenges that may arise in a professional setting.
+
+Resource Optimization: I can optimize resource usage, understand hardware requirements, and explore virtualization technologies, which are essential skills for a system administrator.
+
+## Why Windows?
+
+In this project, I've chosen Windows as my platform for several reasons:
+
+Windows-Centric Environments: Many organizations use Windows servers and client machines, making it essential for a system administrator to be proficient in managing Windows-based systems.
+
+Variety of Services: Windows offers a wide range of services like Active Directory, IIS, DNS, and DHCP, which are integral to many enterprise environments.
+
+Familiarity: For those already comfortable with Windows, it provides a familiar starting point for learning and experimentation.
+
+## What to Expect
+
+In this repository, I will be sharing:
+
+Detailed guides on setting up my Windows-based home lab, from hardware choices to software installations.
+Configuration instructions for creating virtual machines, networks, and services.
+Insights into the tools and scripts I use to automate tasks and streamline system administration.
+Documentation of my progress, challenges faced, and lessons learned along the way.
+I'm excited to have you join me on this journey to become a more skilled and knowledgeable system administrator. Feel free to explore, collaborate, and provide feedback as I build and refine my home lab in Windows. Together, we can take the first steps toward mastering the world of system administration.
 
 
-# Azure Services Employed
-
-- Azure Virtual Network (VNet)
-- Azure Network Security Group (NSG)
-- Virtual Machines (2x Windows, 1x Linux)
-- Log Analytics Workspace with Kusto Query Language (KQL) Queries
-- Azure Key Vault
-- Azure Storage Account
-- Microsoft Sentinel
-- Microsoft Defender for Cloud
-
-
-## Architecture Before Hardening / Security Controls
-
-![Architecture Diagram](https://i.imgur.com/aBDwnKb.jpg)
-
-
-In the project's "Initial" phase, all resources were deployed with the aim of drawing attention from the wider public internet. The Virtual Machines were configured with fully open Network Security Groups (NSGs) and permissive built-in firewalls, granting unrestricted access from any origin. Furthermore, various other resources, including storage accounts and databases, were set up with publicly accessible endpoints, foregoing the use of Private Endpoints for supplementary security. Subsequently, these machines were exposed to the public domain for a 24-hour span, resulting in the generation of the previously mentioned attack maps.
 
 
