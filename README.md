@@ -34,13 +34,53 @@ I invite you to explore my journey further. It is a testament to my commitment t
 
 
 # Prerequisites
-- [Vmware](https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html) Workstation or [VirtualBox](https://www.virtualbox.org/wiki/Downloads) (This project utilizes Virtual Box)
+- [VirtualBox](https://www.virtualbox.org/wiki/Downloads) 
+
+**Download the version of VirtualBox that matches your host operating system (e.g., Windows, macOS, or Linux).*
+
 - Windows Server [2019](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019) ISO image
 - Windows [10](https://www.microsoft.com/en-us/software-download/windows10ISO) ISO image
 
 
 
 
+# Step By Step Installation
 
+After downloading the two ISO images and Virtual Box. You will then want to..
+
+
+ **Install Windows Server 2019 in VirtualBox:**
+
+a. Open VirtualBox after installation.
+
+b. Click on **"New"** to create a new virtual machine.
+
+c. Follow the New Virtual Machine Wizard:
+
+- Give your virtual machine a name and select the appropriate type (Microsoft Windows) and version (Windows Server 2019 (64-bit)).
+- Assign the desired amount of RAM to the virtual machine. Windows Server 2019 typically requires at least 2 GB of RAM.
+- Create a new virtual hard disk or use an existing one. Allocate enough storage space for your needs; 50 GB or more is a good starting point.
+- Configure additional settings as needed.
+  
+d. Click **"Create"** to finish setting up the virtual machine.
+
+e. Select your new virtual machine in the VirtualBox Manager and click **"Start."**
+
+f. When prompted, choose the Windows Server 2019 ISO you downloaded in step 2 as the installation media.
+
+g. Follow the on-screen instructions to install Windows Server 2019 on your virtual machine. You'll need to enter the product key, configure settings, and create an admin password.
+
+**Note that if you choose to install any version that doesn't have "Desktop Experience", you will not be given a GUI.*
+
+
+**Install Windows 10 in VirtualBox:**
+
+a. If you want to install Windows 10 as well, create a new virtual machine in VirtualBox following similar steps as for Windows Server 2019.
+
+b. During the setup, use the Windows 10 ISO you downloaded in step 3 as the installation media.
+
+c. Follow the on-screen instructions to install Windows 10 on the second virtual machine.
+
+Once you've completed these steps, you should have both Windows Server 2019 and Windows 10 running as virtual machines in VirtualBox on your computer. You can start, stop, and manage these virtual machines within VirtualBox as needed.
 
 
