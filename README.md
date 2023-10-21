@@ -118,9 +118,9 @@ Additionally, the Windows Server was going to be a default gateway for reaching 
 
 Within the Windows Server 2019 machine, I had to configure the two network adapters within the **"Network Connections"** section of Windows to create a more versatile network setup.
 
-For the NAT network adapter. I selected the option to "Obtain an IP address automatically." This meant that my server would dynamically receive an IP address from my home router. This dynamic assignment was ideal for connecting to the internet and ensuring the server received the necessary IP configuration from my home network.
+For the **NAT** network adapter. I selected the option to "Obtain an IP address automatically." This meant that my server would dynamically receive an IP address from my home router. This dynamic assignment was ideal for connecting to the internet and ensuring the server received the necessary IP configuration from my home network.
 
-Now, for the second network adapter, which was set as "internal," I had to statically configure the IP settings. Here's what I applied: <br>
+Now, for the second network adapter, which was set as **"internal,"** I had to statically configure the IP settings. Here's what I applied: <br>
 
 **IP Address:** 172.16.0.1 <br>
 **Subnet Mask:** 255.255.255.0 <br>
@@ -130,7 +130,7 @@ Now, for the second network adapter, which was set as "internal," I had to stati
 
 These settings allowed me to establish an isolated internal network. The IP address of 172.16.0.1 served as the gateway for this network, and I used the same address as the preferred DNS server. Since this network was for internal use only, there was no need for a default gateway to connect to external networks. The alternate DNS address of 127.0.0.1 pointed back to the local machine, ensuring efficient DNS resolution for the internal network.
 
-By configuring these network adapters in the "Network Connections" section of Windows Server 2019, I created a network environment that provided both internet access and an isolated internal network to meet my specific requirements in my home lab.
+By configuring these network adapters in the **"Network Connections"** section of Windows Server 2019, I created a network environment that provided both internet access and an isolated internal network to meet my specific requirements in my home lab.
 
 Subsequently, I installed and configured the Active Directory Domain Services role on the Windows Server 2019 machine, effectively transforming it into a domain controller for the lab network.
 
