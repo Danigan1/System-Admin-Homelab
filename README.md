@@ -33,7 +33,7 @@ I invite you to explore my journey further. It is a testament to my commitment t
 
 
 
-# Prerequisites (things that need to be downloaded)
+# Resourses Utilized
 - [VirtualBox](https://www.virtualbox.org/wiki/Downloads) 
 
 **Download the version of VirtualBox that matches your host operating system (e.g., Windows, macOS, or Linux).*
@@ -44,47 +44,45 @@ I invite you to explore my journey further. It is a testament to my commitment t
 
 
 
-# Step By Step Installation
+# Installation Process
 
-After downloading the two ISO images and Virtual Box. You will then want to..
+**Downloading Windows Server 2019 ISO:** 
 
+I began by finding a reliable source to download the Windows Server 2019 ISO file, which might have been the official Microsoft website or another trusted location. <br><br>
+**Downloading Windows 10 ISO:**
 
- **Install Windows Server 2019 in VirtualBox:**
+In a similar manner, I obtained the Windows 10 ISO file from a trusted source, such as the official Microsoft website.<br><br>
+**Opening VirtualBox:**
 
-a. Open VirtualBox after installation.
+I launched the VirtualBox application, which I had previously installed.<br><br>
+**Creating a New Virtual Machine for Windows Server 2019:**
 
-b. Click on **"New"** to create a new virtual machine.
+Inside VirtualBox, I created a new virtual machine for Windows Server 2019.
+I gave the virtual machine a name and specified the operating system type (Microsoft Windows) and version (Windows Server 2019).
+I allocated memory and configured any other settings required.<br><br>
+**Mounting the Windows Server 2019 ISO:**
 
-c. Follow the New Virtual Machine Wizard:
+In the settings for the Windows Server 2019 virtual machine, I navigated to the "Storage" section.
+Under the "Controller: IDE" section, I selected the empty optical drive.
+I chose to "Choose a disk file" and located the Windows Server 2019 ISO file that I had downloaded earlier.<br><br>
+**Creating a New Virtual Machine for Windows 10:**
 
-- Give your virtual machine a name and select the appropriate type (Microsoft Windows) and version (Windows Server 2019 (64-bit)).
-- Assign the desired amount of RAM to the virtual machine. Windows Server 2019 typically requires at least 2 GB of RAM.
-- Create a new virtual hard disk or use an existing one. Allocate enough storage space for your needs; 50 GB or more is a good starting point.
-- Configure additional settings as needed.
-  
-d. Click **"Create"** to finish setting up the virtual machine.
+Similarly, I created a new virtual machine for Windows 10 within VirtualBox, giving it a name and selecting the appropriate OS type and version. <br><br>
+**Mounting the Windows 10 ISO:**
 
-e. Select your new virtual machine in the VirtualBox Manager and click **"Start."**
+In the Windows 10 virtual machine's settings, under "Storage," I mounted the Windows 10 ISO in the optical drive, just like I did for Windows Server 2019. <br><br>
+**Installing Windows Server 2019:**
 
-f. When prompted, choose the Windows Server 2019 ISO you downloaded in step 2 as the installation media.
+I started the Windows Server 2019 virtual machine.
+The virtual machine booted from the Windows Server 2019 ISO.
+I followed the on-screen instructions to install Windows Server 2019 within the virtual machine. <br><br>
+**Installing Windows 10:**
 
-g. Follow the on-screen instructions to install Windows Server 2019 on your virtual machine. You'll need to enter the product key, configure settings, and create an admin password.
+I repeated the process for Windows 10. I started the Windows 10 virtual machine, and it booted from the Windows 10 ISO.
+I followed the on-screen prompts to install Windows 10 within the virtual machine. <br><br>
+**Running Both Virtual Machines:**
 
-**Note that if you choose to install any version that doesn't have "Desktop Experience", you will not be given a GUI.*
-
-![windwos gif](https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/b723053a-2f77-427a-8df7-162d82afbed3)
-
-
-**Install Windows 10 in VirtualBox:**
-
-a. If you want to install Windows 10 as well, create a new virtual machine in VirtualBox following similar steps as for Windows Server 2019.
-
-b. During the setup, use the Windows 10 ISO you downloaded in step 3 as the installation media.
-
-c. Follow the on-screen instructions to install Windows 10 on the second virtual machine.
-
-Once you've completed these steps, you should have both Windows Server 2019 and Windows 10 running as virtual machines in VirtualBox on your computer. You can start, stop, and manage these virtual machines within VirtualBox as needed.
-
+After the installations were complete, I could run both virtual machines simultaneously or individually by starting them from the VirtualBox application.
 
 
 # Network Configuration (Virtual Box)
@@ -96,9 +94,9 @@ Once you've completed these steps, you should have both Windows Server 2019 and 
  
 I provisioned two network interface cards (NICs) 
 
-The first NIC, set to **"NAT,"** provided internet access. It allowed the server to communicate with the external internet.
+The first NIC was set to **"NAT,"** and provided internet access. It allowed the server to communicate with the external internet.
 
-The second NIC, set to **"Internal Network,"** established a private network isolated from the external internet. This network was intended for internal communication within the lab environment.
+The second NIC was set to **"Internal Network,"** which established a private network isolated from the external internet. This network was intended for internal communication within the lab environment.
 
 <img width="1792" alt="Screen Shot 2023-10-20 at 1 41 41 PM" src="https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/57623fd3-aaa8-4379-a3bf-8050ee6acdfc">
 
@@ -110,7 +108,7 @@ It had a single NIC configured as **"Internal Network,"** allowing it to connect
 
 Ultimately, the Windows 10 machine was going to be configured to obtain its IP address automatically through DHCP, with the Windows Server 2019 domain controller serving as the DHCP server.
 
-Additionally, the Windows server was going to be a default gateway for reaching the outer internet.
+Additionally, the Windows Server was going to be a default gateway for reaching the outer internet.
 
 
 <img width="1792" alt="Screen Shot 2023-10-20 at 1 44 09 PM" src="https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/de37f4fd-02f4-4392-98cd-9b41f8d44a51">
@@ -118,7 +116,7 @@ Additionally, the Windows server was going to be a default gateway for reaching 
 
 # Network Configuration (within the virtual Machine)
 
-Within the Windows Server 2019 machine, I had to configure the two network adapters within the "Network Connections" section to create a more versatile network setup.
+Within the Windows Server 2019 machine, I had to configure the two network adapters within the **"Network Connections"** section of Windows to create a more versatile network setup.
 
 For the NAT network adapter. I selected the option to "Obtain an IP address automatically." This meant that my server would dynamically receive an IP address from my home router. This dynamic assignment was ideal for connecting to the internet and ensuring the server received the necessary IP configuration from my home network.
 
