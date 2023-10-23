@@ -122,11 +122,7 @@ For the **NAT** network adapter. I selected the option to "Obtain an IP address 
 
 Now, for the second network adapter, which was set as **"internal,"** I had to statically configure the IP settings. Here's what I applied: <br>
 
-**IP Address:** 172.16.0.1 <br>
-**Subnet Mask:** 255.255.255.0 <br>
-**Default Gateway:** I left this field empty since it was an internal network.<br>
-**Preferred DNS:** 172.16.0.1<br>
-**Alternate DNS:** 127.0.0.1<br>
+![image](https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/0ce8a179-62f8-4830-bfda-0ce6cb4a4674)
 
 These settings allowed me to establish an isolated internal network. The IP address of 172.16.0.1 served as the gateway for this network, and I used the same address as the preferred DNS server. Since this network was for internal use only, there was no need for a default gateway to connect to external networks. The alternate DNS address of 127.0.0.1 pointed back to the local machine, ensuring efficient DNS resolution for the internal network.
 
