@@ -132,6 +132,57 @@ Subsequently, I installed and configured the Active Directory Domain Services ro
 
 
 
+# Setting up Active Directory
+
+After I configured the two Network interface cards, I then began the process of installing Active Directory Domain Services within Windows Server 2019. Here's a summary of the steps I took to achieve this: <br>
+
+
+https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/68a8dc61-cefe-4e3a-949d-4b61d5f39d84
+
+
+**Launch Server Manager:** I started by opening Server Manager, which is the central management console for Windows Server 2019. I typically accessed this by clicking on the Windows icon and selecting "Server Manager."
+
+**Add Roles and Features:** Within Server Manager, I navigated to the "Manage" menu and selected "Add Roles and Features." This launched the Add Roles and Features Wizard, which I used to add the necessary role.
+
+**Role-Based or Feature-Based Installation:** In the wizard, I chose the "Role-based or feature-based installation" option since I was installing Active Directory Domain Services as a role.
+
+**Select a Server:** I selected my Windows Server 2019 from the server pool on which I wanted to install Active Directory Domain Services. This is the server on which I had configured the NICs.
+
+**Select Roles:** In the "Select roles" section, I chose the "Active Directory Domain Services" role. The wizard prompted me to add any additional features that were required for this role.
+
+**Role Services:** On the Role Services page, I didn't need to make any specific selections because Active Directory Domain Services is a single role with its associated role services.
+
+**Confirmation:** The wizard displayed a summary of the selections I made. I reviewed them to ensure they were correct.
+
+**Install:** Finally, I clicked "Install" to start the installation process. The server then went through the process of adding the role and configuring the necessary components.
+
+
+
+https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/5ad75be1-dd30-4cfd-81e7-9623c6168fc5
+
+
+
+**Promote Server to Domain Controller:** After the installation was complete, the wizard prompted me to promote the server to a domain controller. I selected the "Add a new forest" option since I was creating a new Active Directory forest.
+
+**Domain Controller Options:** In this section, I provided a root domain name for my Active Directory forest. I also set a Directory Services Restore Mode (DSRM) password.
+
+**DNS Options:** As part of the installation, I chose to install the DNS server role on the same server since it's commonly required for Active Directory.
+
+**Additional Options:** I reviewed the NetBIOS domain name and left it at the default. I also selected the paths for the database, log files, and SYSVOL files.
+
+**Review Settings:** The wizard displayed a summary of all the settings I had configured. I double-checked these settings to ensure they were accurate.
+
+**Prerequisites Check:** The wizard performed a prerequisite check to make sure everything was in order before promoting the server to a domain controller. If any issues were found, I addressed them.
+
+**Install:** Once the prerequisites were met, I clicked "Install" to begin the installation process. The server was then promoted to a domain controller, and Active Directory Domain Services were installed.
+
+**Completion:** After the installation was completed successfully, I typically had to restart the server to finalize the configuration.
+
+At this point, I had successfully installed Active Directory Domain Services on my Windows Server 2019, and the server became a domain controller for the new domain I created. This allowed me to manage user accounts, group policies, and other directory services within my network.
+
+
+
+
 
 
 
