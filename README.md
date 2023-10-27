@@ -139,7 +139,7 @@ After I configured the two Network interface cards, I then began the process of 
 
 https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/68a8dc61-cefe-4e3a-949d-4b61d5f39d84
 
-
+<br>
 **Launch Server Manager:** I started by opening Server Manager, which is the central management console for Windows Server 2019. I typically accessed this by clicking on the Windows icon and selecting "Server Manager."
 
 **Add Roles and Features:** Within Server Manager, I navigated to the "Manage" menu and selected "Add Roles and Features." This launched the Add Roles and Features Wizard, which I used to add the necessary role.
@@ -160,7 +160,7 @@ https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/68a8dc61-cefe-
 
 https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/5ad75be1-dd30-4cfd-81e7-9623c6168fc5
 
-
+<br>
 
 **Promote Server to Domain Controller:** After the installation was complete, the wizard prompted me to promote the server to a domain controller. I selected the "Add a new forest" option since I was creating a new Active Directory forest.
 
@@ -180,8 +180,54 @@ https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/5ad75be1-dd30-
 
 At this point, I had successfully installed Active Directory Domain Services on my Windows Server 2019, and the server became a domain controller for the new domain I created. This allowed me to manage user accounts, group policies, and other directory services within my network.
 
+# RAS and NAT
 
 
+## Routing and Remote Access (RAS):
+
+RAS is a feature that allows the server to act as a router, providing routing services for remote clients and enabling remote access to the network. However, in the context of a domain controller, RAS typically doesn't change the server's primary role as a domain controller. The domain controller continues to manage user accounts, group policies, and authentication.
+## Network Address Translation (NAT):
+
+NAT, when configured on a domain controller, allows the server to perform a form of network address translation commonly used for sharing a single public IP address with multiple private IP addresses. NAT is often used in scenarios where multiple devices within a private network need to access resources on the internet while sharing a single public IP address. NAT alters the source IP address of outbound packets to the public IP address, and it keeps track of these translations so that when responses come back, it can forward them to the appropriate private IP address.
+I installed RAS and NAT to establish a private virtual network within my virtual environment, ensuring that my Windows 10 client could access the internet while maintaining a secure and isolated network environment. This approach allowed me to control and monitor network traffic while also providing internet connectivity for the client.
+
+## Steps I Took:
+
+### Install RAS and NAT:
+
+I accessed the "Server Manager" on my Windows Server machine, which served as the domain controller.
+Within the "Server Manager," I selected "Add Roles and Features" to initiate the installation process.
+I specifically chose the "Remote Access" role, which includes RAS, and proceeded to install it. <br>
+
+### Configuration of RAS:
+
+After successful installation, I navigated to the "Routing and Remote Access" console on the domain controller.
+In this console, I right-clicked on the server's name and chose "Configure and Enable Routing and Remote Access."
+I selected the "Network Address Translation (NAT)" option from the configuration wizard and completed the setup.<br>
+
+
+
+https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/400c29db-c449-412e-abf3-ceb1b8f40c92
+
+
+
+
+### Creating a Private Virtual Network:
+
+Within the "Routing and Remote Access" console, I configured the private virtual network by specifying an IP address range for the private network segment.
+I assigned an IP address from this range to my Windows 10 client virtual machine.<br>
+### Enabling NAT:
+
+I enabled Network Address Translation (NAT) within the "Routing and Remote Access" console. This enabled the Windows 10 client to access the internet through the domain controller.<br>
+### Routing Rules:
+
+To ensure proper network traffic management, I added routing rules in the "Routing and Remote Access" console. These rules specified that traffic from my Windows 10 client should be NATed (translated) when forwarded to the internet.<br>
+### Client Configuration:
+
+On my Windows 10 client virtual machine, I configured the default gateway to point to the IP address of the virtual adapter on the domain controller running RAS.<br>
+### Testing and Verification:
+
+To confirm the success of the setup, I tested the configuration by attempting to access the internet from the Windows 10 client. The NAT and RAS setup allowed the client to connect to the internet through the domain controller while maintaining the privacy of the virtual network.
 
 
 
