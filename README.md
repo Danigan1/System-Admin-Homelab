@@ -151,7 +151,7 @@ https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/68a8dc61-cefe-
 
 **Install:** Finally, I clicked "Install" to start the installation process. The server then went through the process of adding the role and configuring the necessary components.
 
-
+<br>
 
 https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/5ad75be1-dd30-4cfd-81e7-9623c6168fc5
 
@@ -174,6 +174,8 @@ https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/5ad75be1-dd30-
 **Completion:** After the installation was completed successfully, I typically had to restart the server to finalize the configuration.
 
 At this point, I had successfully installed Active Directory Domain Services on my Windows Server 2019, and the server became a domain controller for the new domain I created. This allowed me to manage user accounts, group policies, and other directory services within my network.
+
+<br>
 
 # RAS and NAT
 
@@ -208,6 +210,19 @@ The DHCP server was configured with a specific scope, defining the range of IP a
 
 Details
 
-Scope 1
 
-range:
+
+https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/cc416528-7f3f-4971-b15b-65ce344b8740
+
+
+<br>
+
+
+DHCP SCOPE
+
+- **range:** 172.16.0.100-200
+- **subnet mask:** 255.255.255.0
+- **Default gateway:** 172.16.0.1
+- **DNS server:** 172.16.0.1
+
+
