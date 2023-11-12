@@ -231,5 +231,6 @@ DHCP SCOPE
 - **subnet mask:** 255.255.255.0
 - **Default gateway:** 172.16.0.1
 - **DNS server:** 172.16.0.1
+- **Lease Duration:** 8 days
 
 
