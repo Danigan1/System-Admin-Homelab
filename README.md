@@ -160,6 +160,11 @@ https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/5ad75be1-dd30-
 <br>
 
 **Promote Server to Domain Controller:** After the installation was complete, the wizard prompted me to promote the server to a domain controller. I selected the "Add a new forest" option since I was creating a new Active Directory forest.
+<br>
+
+ ## ROOT Domain Name: DaniganDomain.com
+
+<br>
 
 **Domain Controller Options:** In this section, I provided a root domain name for my Active Directory forest. I also set a Directory Services Restore Mode (DSRM) password.
 
