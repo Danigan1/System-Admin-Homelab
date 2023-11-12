@@ -124,7 +124,7 @@ These settings allowed me to establish an isolated internal network. Since two N
 
 The DNS section had the the same ip address because the Windows Server was also going to be the DNS server for the any internal clients. 
 
-Active Directory Domain Services was the next step of priority, for the purposes of facilitating a central Authority. (DNS capability apart of this)
+Active Directory Domain Services was the next step of priority, for the purposes of facilitating a central Authority. **(DNS capability apart of this)**
 
 
 
