@@ -44,7 +44,7 @@ I invite you to explore my journey further. It is a testament to my commitment t
 
 
 
-# Installation Process
+# Resource installation process
 
 **Downloading Windows Server 2019 ISO:** 
 
@@ -106,27 +106,21 @@ The second NIC was set to **"Internal Network,"** which established a private ne
 
 It had a single NIC configured as **"Internal Network,"** allowing it to connect to the private, internal network established by the domain controller. 
 
-Ultimately, the Windows 10 machine was going to be configured to obtain its IP address automatically through DHCP, with the Windows Server 2019 domain controller serving as the DHCP server.
-
-Additionally, the Windows Server was going to be a default gateway for reaching the outer internet.
-
 
 <img width="1792" alt="Screen Shot 2023-10-20 at 1 44 09 PM" src="https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/de37f4fd-02f4-4392-98cd-9b41f8d44a51">
 
 
 # Network Configuration (within the virtual Machine)
 
-Within the Windows Server 2019 machine, I had to configure the two network adapters within the **"Network Connections"** section of Windows to create a more versatile network setup.
+Within the Windows Server, I began configuration of the two network adapters that were provisioned in virtual box
 
-For the **NAT** network adapter. I selected the option to "Obtain an IP address automatically." This meant that my server would dynamically receive an IP address from my home router. This dynamic assignment was ideal for connecting to the internet and ensuring the server received the necessary IP configuration from my home network.
+For the **NAT** network adapter. I selected the option to "Obtain an IP address automatically." This meant that my server would dynamically receive an IP address. This dynamic assignment was ideal for connecting to the internet.
 
 Now, for the second network adapter, which was set as **"internal,"** I had to statically configure the IP settings. Here's what I applied: <br>
 
 ![image](https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/0ce8a179-62f8-4830-bfda-0ce6cb4a4674)
 
-These settings allowed me to establish an isolated internal network. The IP address of 172.16.0.1 served as the gateway for this network, and I used the same address as the preferred DNS server. Since this network was for internal use only, there was no need for a default gateway to connect to external networks. The alternate DNS address of 127.0.0.1 pointed back to the local machine, ensuring efficient DNS resolution for the internal network.
-
-By configuring these network adapters in the **"Network Connections"** section of Windows Server 2019, I created a network environment that provided both internet access and an isolated internal network to meet my specific requirements in my home lab.
+These settings allowed me to establish an isolated internal network. Since two NICs were in play, the server was able to create a tunnel from the internal network to the external network. 
 
 Subsequently, I installed and configured the Active Directory Domain Services role on the Windows Server 2019 machine, effectively transforming it into a domain controller for the lab network.
 
@@ -140,6 +134,7 @@ After I configured the two Network interface cards, I then began the process of 
 https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/68a8dc61-cefe-4e3a-949d-4b61d5f39d84
 
 <br>
+
 **Launch Server Manager:** I started by opening Server Manager, which is the central management console for Windows Server 2019. I typically accessed this by clicking on the Windows icon and selecting "Server Manager."
 
 **Add Roles and Features:** Within Server Manager, I navigated to the "Manage" menu and selected "Add Roles and Features." This launched the Add Roles and Features Wizard, which I used to add the necessary role.
@@ -207,10 +202,12 @@ https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/400c29db-c449-
 
 ## DHCP
 
-I configured and enabled DHCP (Dynamic Host Configuration Protocol) on my Windows Server 2019. This decision was made to streamline the process of assigning IP addresses within the domain. By setting up DHCP, any computer that joined the domain could automatically receive an IP address without manual intervention.
+The DHCP (Dynamic Host Configuration Protocol) feature within Windows Server was an important addition. It allowed me to streamline the process of assigning IP addresses within the domain. By setting up DHCP, any computer that joined the domain could automatically receive an IP address without manual intervention.
 
 The DHCP server was configured with a specific scope, defining the range of IP addresses that it could assign to devices on the network. This scope included details such as the starting and ending IP addresses, subnet mask, default gateway, and DNS server information. This allowed for efficient management of IP address allocation within the domain.
 
 Details
 
-Scope
+Scope 1
+
+range:
