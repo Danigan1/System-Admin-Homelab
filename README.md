@@ -234,3 +234,6 @@ DHCP SCOPE
 - **Lease Duration:** 8 days
 
 
+
+# Joining Windows 10 Machine to the New Domain
+
