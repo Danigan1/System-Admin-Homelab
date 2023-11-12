@@ -122,9 +122,9 @@ Now, for the second network adapter, which was set as **"internal,"** I had to s
 
 These settings allowed me to establish an isolated internal network. Since two NICs were in play, the server was able to create a tunnel from the internal network to the external network. 
 
-The DNS section had the the same ip address because the Windows Server was also going to be the DNS server for the any internal clients.
+The DNS section had the the same ip address because the Windows Server was also going to be the DNS server for the any internal clients. 
 
-Subsequently, I installed and configured the Active Directory Domain Services role on the Windows Server 2019 machine, effectively transforming it into a domain controller for the lab network.
+Active Directory Domain Services was the next step of priority, for the purposes of facilitating a central Authority. (DNS capability apart of this)
 
 
 
