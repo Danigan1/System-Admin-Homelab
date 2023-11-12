@@ -209,7 +209,7 @@ Click Next.
 https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/400c29db-c449-412e-abf3-ceb1b8f40c92
 
 
-## DHCP
+## DHCP Configuration
 
 The DHCP (Dynamic Host Configuration Protocol) feature within Windows Server was an important addition. It allowed me to streamline the process of assigning IP addresses within the domain. By setting up DHCP, any computer that joined the domain could automatically receive an IP address without manual intervention.
 
