@@ -238,7 +238,7 @@ DHCP SCOPE
 # Joining Windows 10 Machine to the New Domain
 
 
-First I created a user account named "Mr Person" within Active Directory **Users and computers**. Then I went over to the windows 10 machine and Added the computer to the **"Danigan Domain"** under the user account.
+First I created a user account named "Mr Person" within Active Directory **Users and computers**. Then I went over to the windows 10 machine and added the computer to the **"Danigan Domain"** under the user account.
 
 
 https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/59ce054d-a529-430b-828c-74967228f2fe
