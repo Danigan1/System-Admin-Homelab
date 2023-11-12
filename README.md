@@ -253,7 +253,9 @@ https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/38965f9e-02ef-
 
 
 
-## Populating Active Directory Users using Powershell
+## Creating a user account in Active Directory through powershell
 
+This showcases A small Powershell command I put together to Create one user within Active Directory **Users and computers**
 
+https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/2d6741d8-335f-49e1-8d15-87e522ac3937
 
