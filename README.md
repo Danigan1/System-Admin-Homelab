@@ -247,7 +247,7 @@ https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/59ce054d-a529-
 
 ## Ensuring Internet Connectivity
 
-I was happy to see that the windows 10 machine was able to get network configurations by means of the Windows Server (Acting as DHCP server)
+I was happy to see that the DHCP configurations made on the Windows Server were taking effect on the windows 10 machine and it was able to access the internet through the server.
 
 https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/38965f9e-02ef-4b34-a812-e72724b0eaa1
 
