@@ -255,11 +255,9 @@ https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/38965f9e-02ef-
 
 ## Creating a user account in Active Directory through powershell
 
-<br>
-
 This showcases a small powershell command that I put together to create one user within Active Directory **Users and computers**
 
-**User: Kami Falls**
+**User:** Kami Fall
 
 <br>
 
@@ -269,7 +267,7 @@ https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/2d6741d8-335f-
 
 With some light tweaking of the command and adding variables, the powershell command becomes more versatile and can add different users by asking for new input every iteration.
 
-
+<br>
 
 https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/6b0d80dd-6e5a-4d02-bf79-ae990a9f0005
 
