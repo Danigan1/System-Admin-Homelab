@@ -295,5 +295,16 @@ https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/0e8ec8c0-b197-
 
 https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/8442072f-22f0-401f-9cb0-5b6672e2785b
 
+<br>
+
+## Script for querying logs with by first providing input (powershell ISE)
+
+
+
+
+https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/d568aeae-1b6a-4140-a333-82caa55977c6
+
+
+
 
 
