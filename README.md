@@ -261,7 +261,7 @@ Here, you'll find a variety of experiments. From basic commands to more advanced
 
 <br>
 
-## Creating a user account in Active Directory through powershell
+## PS Script for creating a user account in Active Directory 
 
 This showcases a small powershell command that I put together to create one user within Active Directory **Users and computers**
 
@@ -286,6 +286,14 @@ https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/6b0d80dd-6e5a-
 
 
 https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/0e8ec8c0-b197-46bd-9029-e3884610a2b0
+
+<br>
+
+## Basic math
+
+
+
+https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/8442072f-22f0-401f-9cb0-5b6672e2785b
 
 
 
