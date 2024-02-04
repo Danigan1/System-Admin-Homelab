@@ -116,15 +116,13 @@ Within the Windows Server, I began configuration of the two network adapters tha
 
 For the **NAT** network adapter. I selected the option to "Obtain an IP address automatically." This meant that my server would dynamically receive an IP address. This dynamic assignment was ideal for connecting to the internet.
 
-Now, for the second network adapter, which was set as **"internal,"** I had to statically configure the IP settings. Here's what I applied: <br>
+Now, for the second network adapter, which was set as **internal,** I had to statically configure the IP settings. Here's what I applied: <br>
 
 ![image](https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/0ce8a179-62f8-4830-bfda-0ce6cb4a4674)
 
 These settings allowed me to establish an isolated internal network. Since two NICs were in play, the server was able to create a tunnel from the internal network to the external network. 
 
-The DNS section had the the same ip address because the Windows Server was also going to be the DNS server for the any internal clients. 
-
-Active Directory Domain Services was the next step of priority, for the purposes of facilitating a central Authority. **(DNS capability apart of this)**
+Active Directory Domain Services was the next step of priority **(DNS capability apart of this)**
 
 
 
