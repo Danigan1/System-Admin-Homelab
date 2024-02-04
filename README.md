@@ -110,11 +110,11 @@ It had a single NIC configured as **"Internal Network,"** allowing it to connect
 <img width="1792" alt="Screen Shot 2023-10-20 at 1 44 09 PM" src="https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/de37f4fd-02f4-4392-98cd-9b41f8d44a51">
 
 
-# Network Configuration (within the virtual Machine)
+# Network Configuration (within the Windows Server virtual machine)
 
 Within the Windows Server, I began configuration of the two network adapters that were provisioned in virtual box
 
-For the **NAT** network adapter. I selected the option to "Obtain an IP address automatically." This meant that my server would dynamically receive an IP address. This dynamic assignment was ideal for connecting to the internet.
+For the **NAT network adapter**, I selected the option to **"Obtain an IP address automatically"** and **"Obtain DNS server automatically."** This decision meant that my server would dynamically receive its IP configuration from the NAT network. This dynamic assignment was ideal for connecting to the internet because it allowed the server to adapt to changes in network conditions seamlessly. 
 
 Now, for the second network adapter, which was set as **internal,** I had to statically configure the IP settings. Here's what I applied: <br>
 
@@ -122,9 +122,16 @@ Now, for the second network adapter, which was set as **internal,** I had to sta
 
 These settings allowed me to establish an isolated internal network. Since two NICs were in play, the server was able to create a tunnel from the internal network to the external network. 
 
-Active Directory Domain Services was the next step of priority **(DNS capability apart of this)**
 
 
+
+# Network Configuration (within the Windows 10 virtual machine)
+
+To ensure smooth integration into the domain, I configured the **preferred DNS server** of the Windows 10 client machine to be the **internal** IP address of the domain controller. This decision was made to establish a reliable means of name resolution within the network. By designating the domain controller as the primary DNS server, the client machine would effectively leverage its domain-specific services, facilitating seamless domain join operations and subsequent network communication. This setup ensures that the client machine can accurately resolve domain-related queries, essential for establishing trust and connectivity within the domain environment.
+
+<br>
+
+**preferred DNS:** 172.16.0.1
 
 # Setting up Active Directory
 
@@ -236,7 +243,7 @@ DHCP SCOPE
 # Joining Windows 10 Machine to the New Domain
 
 
-First I created a user account named "Mr Person" within Active Directory **Users and computers**. Then I went over to the windows 10 machine and added the computer to the **"Danigan Domain"** under the user account.
+First I created a **domain admins** user account named "Mr Person" within Active Directory **Users and computers**. Then I went over to the windows 10 machine and added the computer to the **"Danigan Domain"** under the user account.
 
 
 https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/59ce054d-a529-430b-828c-74967228f2fe
