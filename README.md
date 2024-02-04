@@ -251,7 +251,15 @@ I was happy to see that the DHCP configurations made on the Windows Server were 
 
 https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/38965f9e-02ef-4b34-a812-e72724b0eaa1
 
+<br>
 
+# Powershell Playground
+
+This section is dedicated to showcasing my adventures in tinkering around with PowerShell and trying out different commands as part of my journey to learn PowerShell.
+
+Here, you'll find a variety of experiments. From basic commands to more advanced techniques, I'm exploring it all with the aim of mastering this powerful tool.
+
+<br>
 
 ## Creating a user account in Active Directory through powershell
 
@@ -271,6 +279,13 @@ With some light tweaking of the command and adding variables, the powershell com
 
 https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/6b0d80dd-6e5a-4d02-bf79-ae990a9f0005
 
+<br>
+
+## Querying Security event logs and filtering by most recent 10
+
+
+
+https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/0e8ec8c0-b197-46bd-9029-e3884610a2b0
 
 
 
