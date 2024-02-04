@@ -261,7 +261,7 @@ Here, you'll find a variety of experiments. From basic commands to more advanced
 
 <br>
 
-## PS Script for creating a user account in Active Directory 
+## Script for creating a user account in Active Directory (powershell ISE)
 
 This showcases a small powershell command that I put together to create one user within Active Directory **Users and computers**
 
