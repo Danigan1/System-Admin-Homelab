@@ -258,6 +258,45 @@ https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/38965f9e-02ef-
 
 <br>
 
+# Active directory administration
+
+ I embarked on the task of setting up user and group management in Active Directory. First, I initiated the process by creating a user account within Active Directory, ensuring seamless access and authentication for a new member of our network. Following this, I proceeded to establish a cohesive structure by crafting a dedicated "sales" group within Active Directory, aiming to streamline access control and permissions for sales-related resources. With careful consideration, I synchronized this group with a newly created folder, meticulously assigning permissions tailored to the needs of the sales team. Finally, I extended the reach of this resource by sharing the folder, facilitating collaborative work and ensuring accessibility across the network.
+ 
+
+## Creating a user account 
+
+
+
+https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/ed6fdbba-d40e-444e-b0b5-a5fabc973648
+
+<br>
+
+
+## Creating a "sales" group and adding newley created member in group
+
+https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/f9b21685-20fe-4afd-b8eb-b825bd8d6064
+
+
+<br>
+
+## Creating a folder and allowing access to the "sales" group with read permissions.
+
+
+
+https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/812cd9d5-a165-49e9-8d8a-4fa253c96dac
+
+<br>
+
+
+## Password reset simulation
+
+
+
+https://github.com/Danigan1/System-Admin-Homelab/assets/107498392/8b889de6-7e45-4929-b04d-e61ac5f3bb29
+
+
+<br>
+
 # Powershell Playground
 
 This section is dedicated to showcasing my adventures in tinkering around with PowerShell and trying out different commands as part of my journey to learn PowerShell.
